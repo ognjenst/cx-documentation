@@ -1,28 +1,17 @@
-import { ContentResolver, FirstVisibleChildLayout } from 'cx/ui';
-import { DocumentTitle, PureContainer, RedirectRoute, Route } from 'cx/widgets';
-import About from './about';
-import Widgets from './widgets';
-import Pages from './pages';
-import Dashboard from './dashboard';
-import { CheckerLayout } from '../layout/CheckerLayout';
-import SignIn from './pages/sign-in';
-import { SandboxedRoute } from '../components/SandboxedRoute';
-import InvoiceRoutes from './invoices';
-import { PageNotImplemented } from '../components/PageNotImplemented';
+import { ContentResolver } from 'cx/ui';
+import { DocumentTitle } from 'cx/widgets';
+import { DocumentationLayout } from '../layout/DocumentationLayout';
 
 export default () => (
    <cx>
-      <FirstVisibleChildLayout>
-         <Route route="~/pages" url-bind="url" prefix>
-            <Pages />
-         </Route>
+      <DocumentationLayout></DocumentationLayout>
+      {/* <RedirectRoute route="~/" redirect="~/dashboard" url-bind="url" />
 
-         <SignIn visible-expr="!{user}" />
-
-         <RedirectRoute route="~/" redirect="~/dashboard" url-bind="url" />
-
-         <CheckerLayout>
-            <SandboxedRoute route="~/dashboard">
+      <CheckerLayout>
+         <SandboxedRoute route="~/">
+            <HomePage />
+         </SandboxedRoute>
+         <SandboxedRoute route="~/dashboard">
                <Dashboard />
             </SandboxedRoute>
             <Route route="~/customers" url-bind="url" prefix>
@@ -41,14 +30,8 @@ export default () => (
             <Route route="~/about" url-bind="url">
                <About />
             </Route>
-         </CheckerLayout>
-      </FirstVisibleChildLayout>
+      </CheckerLayout> */}
 
-      <ContentResolver
-         visible-expr="!!{user}"
-         params={1}
-         onResolve={() => import(/* webpackChunkName: "user-routes" */ './user').then((x) => x.default)}
-      />
       <ContentResolver
          params={1}
          onResolve={() => import(/* webpackChunkName: "overlays" */ '../overlays').then((x) => x.default)}
