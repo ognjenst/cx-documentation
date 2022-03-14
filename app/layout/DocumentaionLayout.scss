@@ -7,9 +7,7 @@
    background-color: unset;
 }
 .main-container {
-   display: flex;
    justify-content: space-between;
-   align-items: center;
 }
 
 .center-content {
@@ -17,8 +15,8 @@
    flex: 1 1 auto;
 }
 
-.left-content,
-.right-content {
+.left-container,
+.right-container {
    /* Forces side columns to stay same width */
-   flex: 0 0 100px;
+   flex: 0 0 200px;
 }
