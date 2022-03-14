@@ -1,23 +1,14 @@
 import { Store } from 'cx/data';
-import { Url, History, Widget, startHotAppLoop, enableCultureSensitiveFormatting } from 'cx/ui';
-import { Timing, Debug } from 'cx/util';
-
+import { enableCultureSensitiveFormatting, History, startHotAppLoop, Widget } from 'cx/ui';
+import { Debug, Timing } from 'cx/util';
 import './data/mock-api-service-worker';
+//app loop
+import Routes from './routes';
 
 enableCultureSensitiveFormatting();
 
 //store
-const store = new Store({
-   data: {
-      user: {
-         firstName: 'Test',
-         lastName: 'User',
-         initials: 'TU',
-         pictureUrl: 'https://source.unsplash.com/d-MfHM-jHwc/100x100/?face',
-         email: 'test@example.com',
-      },
-   },
-});
+const store = new Store();
 
 //Remove in the latter stage of the project
 window.store = store;
@@ -30,8 +21,5 @@ History.connect(store, 'url');
 Widget.resetCounter();
 Timing.enable('app-loop');
 Debug.enable('app-data');
-
-//app loop
-import Routes from './routes';
 
 startHotAppLoop(module, document.getElementById('app'), store, Routes);

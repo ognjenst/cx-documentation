@@ -1,0 +1,24 @@
+.cxb-menuitem.cxs-medium-padding > a,
+.cxb-menuitem.cxs-medium-padding > span {
+   all: unset;
+}
+
+.cxs-focusable > .cxb-menuitem.cxs-cursor:hover {
+   background-color: unset;
+}
+.main-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.center-content {
+   /* Lets middle column shrink/grow to available width */
+   flex: 1 1 auto;
+}
+
+.left-content,
+.right-content {
+   /* Forces side columns to stay same width */
+   flex: 0 0 100px;
+}
