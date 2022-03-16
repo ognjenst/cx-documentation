@@ -1,9 +1,9 @@
-import { bind, expr } from 'cx/ui';
-import { Menu, MenuItem, TextField } from 'cx/widgets';
+import { bind } from 'cx/ui';
+import { NavigationBar } from '../components/navigation-bar';
+import { LeftSideMenu } from '../components/sidemenu-left';
+import { RightSideMenu } from '../components/sidemenu-right';
 
-const navItemStyle = 'p-2 m-1';
-
-let LayoutController = {
+const LayoutController = {
    onInit() {
       this.store.set('theme.dark', true);
    },
@@ -14,37 +14,23 @@ let LayoutController = {
 export const DocumentationLayout = ({ children }) => (
    <cx>
       <div class={{ 'h-full': true, dark: bind('theme.dark') }} controller={LayoutController}>
-         <div class="max-w-8xl h-full mx-auto px-4 sm:px-6 md:px-8 bg-white dark:bg-gray-800 transition-colors text-black dark:text-white">
-            {/* Navigation */}
-            <div class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75">
-               {/* Nav container */}
-               <nav class="flex flex-row justify-between p-2">
-                  {/* Left section */}
-                  <Menu class="flex flex-row">
-                     <MenuItem className={navItemStyle} text="CxJS" />
-                  </Menu>
-
-                  {/* Right section */}
-                  <Menu class="flex flex-row">
-                     <MenuItem
-                        className={navItemStyle}
-                        text-expr="{theme.dark}? 'Light':'Dark'"
-                        onClick="toggleTheme"
-                     />
-                     <MenuItem className={navItemStyle} text="Codaxy" />
-                     <MenuItem className={navItemStyle} text="Blog" />
-                     <MenuItem className={navItemStyle} text="Git" />
-                  </Menu>
-               </nav>
+         <div
+            class={{
+               'max-w-8xl h-full mx-auto': true,
+               'bg-white dark:bg-gray-800': true,
+               'dark:bg-gradient-to-tr dark:from-slate-900 dark:to-slate-800': true,
+               'bg-gradient-to-tr from-white to-blue-200': true,
+               'text-black dark:text-white': true,
+               'transition-colors': true,
+            }}
+         >
+            <NavigationBar />
+            <div class="flex flex-row justify-between pt-2">
+               <LeftSideMenu />
+               <div className="center-container w-full p-2">{children}</div>
+               <RightSideMenu />
             </div>
-            <div class="main-container">
-               <div className="left-container">
-                  <TextField />
-               </div>
-               <div className="center-container">Center</div>
-               <div className="right-container">Right menu</div>
-            </div>
-            <div>{children}</div>
+            <div></div>
          </div>
       </div>
    </cx>

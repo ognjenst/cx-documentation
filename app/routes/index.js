@@ -1,10 +1,13 @@
 import { ContentResolver } from 'cx/ui';
 import { DocumentTitle } from 'cx/widgets';
 import { DocumentationLayout } from '../layout/DocumentationLayout';
+import { HomePage } from './HomePage';
 
 export default () => (
    <cx>
-      <DocumentationLayout></DocumentationLayout>
+      <DocumentationLayout>
+         <HomePage />
+      </DocumentationLayout>
       {/* <RedirectRoute route="~/" redirect="~/dashboard" url-bind="url" />
 
       <CheckerLayout>

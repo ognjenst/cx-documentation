@@ -1,10 +1,7 @@
 import { createFunctionalComponent } from 'cx/ui';
 
-export default () =>
-   createFunctionalComponent(() => {
-      return (
-         <cx>
-            <div>Hello</div>
-         </cx>
-      );
-   });
+export const HomePage = () => (
+   <cx>
+      <div>Hello</div>
+   </cx>
+);
