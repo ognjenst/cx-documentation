@@ -5,10 +5,13 @@ import { RightSideMenu } from '../components/sidemenu-right';
 
 const LayoutController = {
    onInit() {
-      this.store.set('theme.dark', true);
+      let darkTheme = localStorage.getItem('theme');
+      this.store.set('theme.dark', darkTheme == 'dark' ? true : false);
    },
    toggleTheme() {
+      let darkTheme = this.store.get('theme');
       this.store.toggle('theme.dark');
+      localStorage.setItem('theme', darkTheme ? 'dark' : 'light');
    },
 };
 export const DocumentationLayout = ({ children }) => (
@@ -16,7 +19,7 @@ export const DocumentationLayout = ({ children }) => (
       <div class={{ 'h-full': true, dark: bind('theme.dark') }} controller={LayoutController}>
          <div
             class={{
-               'max-w-8xl h-full mx-auto': true,
+               'h-full ': true,
                'bg-white dark:bg-gray-800': true,
                'dark:bg-gradient-to-tr dark:from-slate-900 dark:to-slate-800': true,
                'bg-gradient-to-tr from-white to-blue-200': true,
@@ -24,13 +27,14 @@ export const DocumentationLayout = ({ children }) => (
                'transition-colors': true,
             }}
          >
-            <NavigationBar />
-            <div class="flex flex-row justify-between pt-2">
-               <LeftSideMenu />
-               <div className="center-container w-full p-2">{children}</div>
-               <RightSideMenu />
+            <div class="max-w-screen-2xl mx-auto">
+               <NavigationBar />
+               <div class="flex flex-row justify-between pt-2">
+                  <LeftSideMenu />
+                  <div className="center-container w-full p-2">{children}</div>
+                  <RightSideMenu />
+               </div>
             </div>
-            <div></div>
          </div>
       </div>
    </cx>

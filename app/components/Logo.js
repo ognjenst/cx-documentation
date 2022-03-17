@@ -1,5 +1,4 @@
 import { Icon, Link } from 'cx/widgets';
-import '../icons/index';
 
 export const Logo = ({ className }) => (
    <cx>

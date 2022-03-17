@@ -5,6 +5,9 @@ import './data/mock-api-service-worker';
 //app loop
 import Routes from './routes';
 
+// icons
+import './icons/index';
+
 enableCultureSensitiveFormatting();
 
 //store

@@ -17,6 +17,7 @@ import {
    DocumentTextIcon,
    ExclamationIcon,
    InformationCircleIcon,
+   MoonIcon,
    PencilIcon,
    PlusIcon,
    PresentationChartBarIcon,
@@ -24,6 +25,7 @@ import {
    PuzzleIcon,
    RefreshIcon,
    SearchIcon,
+   SunIcon,
    TemplateIcon,
    UserGroupIcon,
    UserIcon,
@@ -96,3 +98,7 @@ Icon.register('arrow-left', (props) => <ArrowLeftIcon {...props} />);
 Icon.register('printer', (props) => <PrinterIcon {...props} />);
 
 Icon.register('pencil', (props) => <PencilIcon {...props} />);
+
+Icon.register('sun', (props) => <SunIcon {...props} />);
+
+Icon.register('moon', (props) => <MoonIcon {...props} />);

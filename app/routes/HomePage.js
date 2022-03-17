@@ -1,7 +1,9 @@
-import { createFunctionalComponent } from 'cx/ui';
+import { Icon } from 'cx/widgets';
 
 export const HomePage = () => (
    <cx>
-      <div>Hello</div>
+      <div>
+         <Icon className="w-6 h-6" name="cog" />
+      </div>
    </cx>
 );

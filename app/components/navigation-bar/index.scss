@@ -1,0 +1,13 @@
+.navbar {
+   .cxb-menuitem.cxs-medium-padding > a,
+   .cxb-menuitem.cxs-medium-padding > span {
+      all: unset;
+   }
+
+   .cxs-focusable > .cxb-menuitem.cxs-cursor:hover {
+      background-color: unset;
+   }
+   .cxs-focusable.cxs-cursor > .cxb-menuitem.cxs-cursor {
+      background-color: unset;
+   }
+}
