@@ -17,7 +17,7 @@
       "@heroicons/react": "^1.0.5",
       "casual": "^1.6.2",
       "core-js": "^3.20.3",
-      "cx": "^22.6.3",
+      "cx": "^22.12.1",
       "cx-react": "^17.10.0",
       "heroicons": "^1.0.5",
       "prosemirror-example-setup": "^1.1.2",

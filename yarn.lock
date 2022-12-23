@@ -2873,10 +2873,10 @@ cx-scss-manifest-webpack-plugin@^18.6.0:
   resolved "https://registry.yarnpkg.com/cx-scss-manifest-webpack-plugin/-/cx-scss-manifest-webpack-plugin-18.6.0.tgz#93e0a438fc00e7cbd07a39fe85ac8c40e33b7377"
   integrity sha512-wR36z/0yqOebANyExB/9y3JHWWQ+8oco2qKI0d4n9m3ALjlw1+YRJcWu8OB2Xdpill/SNeff2aTQmU1kIowHJA==
 
-cx@^22.6.3:
-  version "22.6.3"
-  resolved "https://registry.yarnpkg.com/cx/-/cx-22.6.3.tgz#7092d264ad72244c022ecd2d40dd02b35605f911"
-  integrity sha512-Z7QZVf4vbrOin14NDIz9xtr5uuPlrY4kt3uGqiEbNqJaVKXWlpJKGzUj/dP4GQir9Gx0WCrCCqJybYEsjfALsg==
+cx@^22.12.1:
+  version "22.12.1"
+  resolved "https://registry.yarnpkg.com/cx/-/cx-22.12.1.tgz#52adc742d1e36f80f7d048f5548552f6b36dee3f"
+  integrity sha512-xbMVLWCjVVtNwPYkkhfjT9g7IP5NLCj4T5eI8YlRn/RnOEpvJAkMujTFCw6JPn/aCdUqsDtShja3evKpBHEhmQ==
   dependencies:
     intl-io "^0.3.0"
     route-parser "^0.0.5"
