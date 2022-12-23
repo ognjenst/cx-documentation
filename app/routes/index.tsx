@@ -1,13 +1,10 @@
-import { ContentResolver } from 'cx/ui';
 import { DocumentTitle } from 'cx/widgets';
-import { DocumentationLayout } from '../layout/DocumentationLayout';
-import { HomePage } from './HomePage';
+import Home from './home';
 
 export default () => (
    <cx>
-      <DocumentationLayout>
-         <HomePage />
-      </DocumentationLayout>
+      <Home />
+
       {/* <RedirectRoute route="~/" redirect="~/dashboard" url-bind="url" />
 
       <CheckerLayout>
@@ -35,10 +32,6 @@ export default () => (
             </Route>
       </CheckerLayout> */}
 
-      <ContentResolver
-         params={1}
-         onResolve={() => import(/* webpackChunkName: "overlays" */ '../overlays').then((x) => x.default)}
-      />
       <DocumentTitle append text="Demo App" separator=" | " />
    </cx>
 );
